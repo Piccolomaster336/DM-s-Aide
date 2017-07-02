@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>Blank App</title>
+
+        <script src="node_modules/pouchdb/dist/pouchdb.min.js"></script>
+        <script src="node_modules/jquery/dist/jquery.min.js"></script>
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        
+        <script src="js/index.js"></script>
+
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+        <div id="MainPage">
+            <div id="wholeDiv">
+                <input type="text" name="name" id="uniqueID" value="value" />
+                <input type="text" name="name2" id="uniqueID2" value="value" />
+                <input type="button" onclick="storeCharacterData()" value="store">
+                <input type="button" onclick="showCharacterData()" value="show">
+                <input type="button" onclick="clearData()" value="Clear Data">
+            </div>
+
+            <div id="mpTopButtons">
+                <input type="button" onclick="" value="Load">
+                <input type="button" onclick="" value="Save">
+                <input type="button" onclick="changePage('MainPage', 'NewCharacterPage')" value="New Character">
+                <input type="button" onclick="populateMainPage()" value="Populate">
+            </div>
+
+            <div id="mpHeroesPanel">
+
+            </div>
+        </div>
+
+
+        <div id="NewCharacterPage" style="display: none;">
+            <input type="button" onclick="changePage('NewCharacterPage', 'MainPage')" value="Back">
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#ncHeroTab">Hero</a></li>
+                        <li><a data-toggle="tab" href="#ncEnemyTab">Enemy</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="tab-content">
+
+                <div id="ncHeroTab" class="tab-pane active">
+                    <form id="characterInfoForm">
+
+                        <br>
+                        
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-11 ncNameInfo">
+                                    <p class="ncText" id="ncNameText">Character Name</p>
+                                    <input class="ncTextBox" id="ncNameTextBox" type="text" name="Name">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-4 ncStatInfo">
+                                    <p class="ncStatName ncText">Strength</p>
+                                    <input class="ncTextBox" type="number" name="Strength">
+                                </div>
+                                <div class="col-xs-4 ncStatInfo">
+                                    <p class="ncStatName ncText">Dexterity</p>
+                                    <input class="ncTextBox" type="number" name="Dexterity">
+                                </div>
+                                <div class="col-xs-4 ncStatInfo">
+                                    <p class="ncStatName ncText">Constitution</p>
+                                    <input class="ncTextBox" type="number" name="Constitution">
+                                </div>
+
+                                <div class="w-100"></div>
+
+                                <div class="col-xs-4 ncStatInfo">
+                                    <p class="ncStatName ncText">Intelligence</p>
+                                    <input class="ncTextBox" type="number" name="Intelligence">
+                                </div>
+                                <div class="col-xs-4 ncStatInfo">
+                                    <p class="ncStatName ncText">Wisdom</p>
+                                    <input class="ncTextBox" type="number" name="Wisdom">
+                                </div>
+                                <div class="col-xs-4 ncStatInfo">
+                                    <p class="ncStatName ncText">Charisma</p>
+                                    <input class="ncTextBox" type="number" name="Charisma">
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p class="ncText ncSecondaryStatName">Maximim Health<br></p>
+                                    <input class="ncTextBox" type="number" name="Health">
+                                </div>
+                                <div class="col-xs-6">
+                                    <p class="ncText ncSecondaryStatName">AC<br></p>
+                                    <input class="ncTextBox" type="number" name="AC">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-xs-6">
+                                    <p class="ncText ncSecondaryStatName">Proficiency Bonus</p>
+                                    <input class="ncTextBox" type="number" name="ProficiencyBonus">
+                                </div>
+                                <div class="col-xs-6">
+                                    <p class="ncText ncSecondaryStatName">Passive Perception</p>
+                                    <input class="ncTextBox" type="number" name="PassivePerception">
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <div id="ncEnemyTab" class="tab-pane">
+                    <p>nothing to see here</p>
+                </div>
+
+            </div>
+        </div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+    </body>
+</html>
